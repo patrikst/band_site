@@ -253,7 +253,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		// =========================
 		// 		BAND MANAGEMENT
 		// =========================		
-		//  REP + TILLGÄNGLIGHET
+		//  REP + TILLGï¿½NGLIGHET
 		case view_rehersals:
 		case add_availability:
 		case edit_rehersal_availability:
@@ -589,7 +589,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		if($debug) echo "<li> calling uly_print_lyrics_table($debug, $dbase, vvv, $targetPHP, uID, $stateFlag, $edituID, $title, $artist, $name)";
 	//	uly_print_lyrics_table($debug, $dbase, $tableName, $targetPHP, "uID", $stateFlag, $edituID, $title, $artist, $category, $language);
 		$mode = "ADD";
-		ucssr_print_header_title("Lägg till låt...");
+		ucssr_print_header_title("Lï¿½gg till lï¿½t...");
 		ucss_section_start($debug, "lyricListSection", "clearfix");
 //		ulyr_view_lyric_head($debug, $dbase, $tableName, $songID, $targetPHP, $theKey, $fontSize, $mode, $bandID, $errorFlag, $title, $artist, $category, $language, $PREVIOUS_ACTION, $bChords);
 		ulyr_print_add_lyric_form($debug, $bandID, $targetPHP, $tableName, $PREVIOUS_ACTION);
@@ -600,7 +600,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action2 == "do_add_lyrics")
 	{
 		// ADD IN THE MAIN DATABASE
-		ubdc_print_page_title("Lägger till låt. ", "", "", "", $bandID);
+		ubdc_print_page_title("Lï¿½gger till lï¿½t. ", "", "", "", $bandID);
 		$db 	= "Lyrics";
 		$table 	= "new_lyrics";
 		if ($debug) up_note ("Adding lyrics in MAIN DB> $debug, $dbase, $table,$targetPHP, $table, title:<b>$title</b>, artist:$artist, $lyrics, $originalKey, cat:$category, lang:$language");
@@ -690,7 +690,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	{
 		$PREVIOUS_ACTION = ubdc_create_previous_action($MY_PHP_PARAM_LIST, $PHP_FILE_NAME);
 		if ($PREVIOUS_ACTION == "") up_error("ub_lyrics.php/view_all_lyrics: PREVIOUS_ACTION == NULL");
-		ucssr_print_header_title("Alla låtar");
+		ucssr_print_header_title("Alla lï¿½tar");
 		ucss_section_start($debug, "lyricListSection", "clearfix");
 //	 	uly_print_lyrics_table($debug, $dbase, $tableName, $targetPHP, $uniqueKeyLabelName, $stateFlag, $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, $titleFilter, $artistFilter, $instrumentFilter, $bandID, $importFlag, $anchorPoint, $highLightSongID, $PREVIOUS_ACTION );
 	 	ulyr_print_lyrics_table_by_lyrics_status($debug, $dbase, $tableName, $targetPHP, "uID", "", $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, "", $titleFilter, $artistFilter, $instrument, $bandID, $highlightID, $PREVIOUS_ACTION);
@@ -704,58 +704,58 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "view_next_rehersal_songs" )
 	{
-//		ubdc_print_page_title("Låtar", "", "", "", $bandID);
+//		ubdc_print_page_title("Lï¿½tar", "", "", "", $bandID);
 		$PREVIOUS_ACTION = ubdc_create_previous_action($MY_PHP_PARAM_LIST, $PHP_FILE_NAME);
-		ucssr_print_header_title("Låtar - Nästa rep");
+		ucssr_print_header_title("Lï¿½tar - Nï¿½sta rep");
 		ucss_section_start($debug, "lyricListSection", $class);
 	 	ulyr_print_lyrics_table_by_lyrics_status($debug, $dbase, $tableName, $targetPHP, "uID", "", $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, 3, $titleFilter, $artistFilter, $instrument, $bandID, $highlightID, $PREVIOUS_ACTION);
 		ucss_section_end($debug, "lyricListSection", $class);
 	}
 	else if ($action == "view_proposed_songs" )
 	{
-//		ubdc_print_page_title("Låtar", "", "", "", $bandID);
+//		ubdc_print_page_title("Lï¿½tar", "", "", "", $bandID);
 		$PREVIOUS_ACTION = ubdc_create_previous_action($MY_PHP_PARAM_LIST, $PHP_FILE_NAME);
-		ucssr_print_header_title("Förslagna låtar");
+		ucssr_print_header_title("Fï¿½rslagna lï¿½tar");
 		ucss_section_start($debug, "lyricListSection", $class);
 	 	ulyr_print_lyrics_table_by_lyrics_status($debug, $dbase, $tableName, $targetPHP, "uID", "", $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, 1, $titleFilter, $artistFilter, $instrument, $bandID, $highlightID, $PREVIOUS_ACTION);
 		ucss_section_end($debug, "lyricListSection", $class);
 	}
 	else if ($action == "view_rehersed_songs" )
 	{
-//		ubdc_print_page_title("Låtar", "", "", "", $bandID);
+//		ubdc_print_page_title("Lï¿½tar", "", "", "", $bandID);
 		$PREVIOUS_ACTION = ubdc_create_previous_action($MY_PHP_PARAM_LIST, $PHP_FILE_NAME);
-		ucssr_print_header_title("Inrepade låtar");
+		ucssr_print_header_title("Inrepade lï¿½tar");
 		ucss_section_start($debug, "lyricListSection", $class);
 	 	ulyr_print_lyrics_table_by_lyrics_status($debug, $dbase, $tableName, $targetPHP, "uID", "", $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, 0, $titleFilter, $artistFilter, $instrument, $bandID, $highlightID, $PREVIOUS_ACTION);
 		ucss_section_end($debug, "lyricListSection", $class);
 	}
 	else if($action == "filter_lyrics")
 	{
-//		ubdc_print_page_title("Låtar", "", "", "", $bandID);
+//		ubdc_print_page_title("Lï¿½tar", "", "", "", $bandID);
 		$PREVIOUS_ACTION = ubdc_create_previous_action($MY_PHP_PARAM_LIST, $PHP_FILE_NAME);
 	// 	uly_print_lyrics_table_by_lyrics_status($debug, $dbase, $tableName, $targetPHP, "uID", "", $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, 0, $titleFilter, $artistFilter, $instrument, $bandID, $highlightID, $PREVIOUS_ACTION);
-		ucssr_print_header_title("Reslutat sökning");
+		ucssr_print_header_title("Reslutat sï¿½kning");
 		ucss_section_start($debug, "lyricListSection", "clearfix");
 //	 	uly_print_lyrics_table($debug, $dbase, $tableName, $targetPHP, $uniqueKeyLabelName, $stateFlag, $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, $titleFilter, $artistFilter, $instrumentFilter, $bandID, $importFlag, $anchorPoint, $highLightSongID, $PREVIOUS_ACTION );
 	 	ulyr_print_lyrics_table_by_lyrics_status($debug, $dbase, $tableName, $targetPHP, "uID", "", $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, "", $titleFilter, $artistFilter, $instrument, $bandID, $highlightID, $PREVIOUS_ACTION);
 		ucss_section_end($debug, "lyricListSection", $class);
-		ucssr_print_header_title("Relaterade låtar att importera...");
+		ucssr_print_header_title("Relaterade lï¿½tar att importera...");
 		ucss_section_start($debug, "lyricListSection", "clearfix");
 		uly_print_import_table($debug, $MainDb, $tableName , $targetPHP, $uniqueKeyLabelName, $stateFlag, $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, $titleFilter, $artistFilter, $instrumentFilter, $genreFilter, $bandID, 1 );
 		ucss_section_end($debug, "lyricListSection", $class);
 	}
 	else if($action == "import_lyrics")
 	{
-//		ubdc_print_page_title("Importera låt", "", "", "", $bandID);
-		ucssr_print_header_title("Importera låt...");
+//		ubdc_print_page_title("Importera lï¿½t", "", "", "", $bandID);
+		ucssr_print_header_title("Importera lï¿½t...");
 		ucss_section_start($debug, "lyricListSection", "clearfix");
 		uly_print_import_table($debug, $MainDb, $tableName , $targetPHP, $uniqueKeyLabelName, $stateFlag, $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, $titleFilter, $artistFilter, $instrumentFilter, $genreFilter, $bandID, 1 );
 		ucss_section_end($debug, "lyricListSection", $class);
 	}
 	else if($action == "filter_import_lyrics")
 	{
-//		ubdc_print_page_title("Filtrerade importlåtar", "", "", "", $bandID);
-		ucssr_print_header_title("Importera låt (filter)...");
+//		ubdc_print_page_title("Filtrerade importlï¿½tar", "", "", "", $bandID);
+		ucssr_print_header_title("Importera lï¿½t (filter)...");
 		ucss_section_start($debug, "lyricListSection", "clearfix");
 		uly_print_import_table($debug, $MainDb, $tableName , $targetPHP, $uniqueKeyLabelName, $stateFlag, $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, $titleFilter, $artistFilter, $instrumentFilter, $genreFilter, $bandID, 1 );
 		ucss_section_end($debug, "lyricListSection", $class);
@@ -764,9 +764,9 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if($action == "do_import_lyric")
 	{
 		//$debug = 1;
-//		ubdc_print_page_title("Importera låt", "", "", "", $bandID);
+//		ubdc_print_page_title("Importera lï¿½t", "", "", "", $bandID);
 		uly_import_song_to_band($debug, $bandID, $songID, $targetPHP);
-	 	// Förslag
+	 	// Fï¿½rslag
 	 	// echo "<li> Calling print table - proposed songs - Highlight: '$songID'";
 	 	uly_print_lyrics_table_by_lyrics_status($debug, $dbase, $tableName, $targetPHP, "uID", "", $edituID, $givenTitle, $givenArtist, $givenCategory, $givenLanguage, 1, $titleFilter, $artistFilter, $instrument, $bandID, $songID);
 	 	//echo "<li> Calling print table - proposed songs...DONE!";
@@ -1542,7 +1542,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	// ======================================== 
 	else if ($action == "search")
 	{
-		// ubdc_print_page_title("Sökning", "", "", "", $bandID, "SEARCH", $PHP_FILE_NAME);
+		// ubdc_print_page_title("Sï¿½kning", "", "", "", $bandID, "SEARCH", $PHP_FILE_NAME);
 		ucss_section_start($debug, "section3", $class);
 		ubdc_search_responsive ($debug, $bandID, $PHP_FILE_NAME, $search_value);
 		ucss_section_end($debug, "section3", $class);
@@ -1553,7 +1553,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action == "view_old_repertoirs")  // ALL
 	{
 //  ubdc_print_page_title($pageTitle, $subTitle, $addURL, $addHoverText, $bandID)
-			ubdc_print_page_title("Gamla Låtlistor", "", "", "", $bandID);
+			ubdc_print_page_title("Gamla Lï¿½tlistor", "", "", "", $bandID);
 		//	$debug = 1;
 			if ($debug) echo "<li> VIEW ALL REPERTOIRS - debug=$debug";
 	    	ubd_rp_view_old_repertoirs($debug,  $bandID, "", $PHP_FILE_NAME, $LYRICS_PHP);	  // VIEW ALL  
@@ -1563,10 +1563,10 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	{
 		//	$debug = 1;
 		if ($debug) echo "<li> VIEW ALL REPERTOIRS - debug=$debug";
-		ucssr_print_header_title("LÅTLISTOR");
+		ucssr_print_header_title("Lï¿½TLISTOR");
 		ucss_section_start($debug, "section3", $class);
 	    ubd_rp_view($debug,  $bandID, "", $PHP_FILE_NAME, $LYRICS_PHP);	  // VIEW ALL  
-	    ub_nice_link("$targetPHP?action=view_old_repertoirs&bandID=$bandID", "Gamla låtlistor");
+	    ub_nice_link("$targetPHP?action=view_old_repertoirs&bandID=$bandID", "Gamla lï¿½tlistor");
 		ucss_section_end();
 		if ($debug) echo "<li> VIEW ALL REPERTOIRS...DONE";
 	}
@@ -1593,14 +1593,14 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "print_add_repertoir_form")
 	{
-			ubdc_print_page_title("Låtlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 			//$debug = 1;
 	    	ubd_rp_print_form($debug, $bandID, $edit, $rID, "", "", "",  $PHP_FILE_NAME);
 			$debug = 0;
 	}
 	else if ($action == "add_repertoir")
 	{	
-			ubdc_print_page_title("Låtlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 			$debug = 1;
 	       	ubd_rp_add($debug, $bandID, $name, $nofSets, $PHP_FILE_NAME ); 
 			$debug = 0;
@@ -1617,7 +1617,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "upload_repertoir_pdf")
 	{	
-			ubdc_print_page_title("Låtlistor", "", "", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", "", "", "", $bandID);
 		//	$debug = 1;
 		//	if  ($long_document == "" && )
 	   //    		ubd_rp_print_add_pdf_form($debug, $bandID, $rID, $targetPHP ); 
@@ -1628,7 +1628,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "do_add_repertoir")
 	{	
-			ubdc_print_page_title("Låtlistor", "", "", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", "", "", "", $bandID);
 		//	$debug = 1;
 	       	ubd_rp_add_pdf($debug, $bandID, $name, $nofSets, $PHP_FILE_NAME ); 
 			$debug = 0;
@@ -1638,7 +1638,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	{	
 		$name = ubd_rp_get_repertoir_name($debug, $bandID, $rID);
 		// ubdc_print_page_title("$name", "", "", "", $bandID); // $PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID
-		ucssr_print_header_title("Redigera låtlista - $name");
+		ucssr_print_header_title("Redigera lï¿½tlista - $name");
 		ucss_section_start($debug, "section3", $class);	
        	ubd_rp_print_edit_title_form($debug, $bandID, $rID, $targetPHP ); 
 	    // up_hr();
@@ -1653,7 +1653,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action == "add_song_to_set")
 	{	
 			$name = ubd_rp_get_repertoir_name($debug, $bandID, $rID);
-			ubdc_print_page_title("Låtlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 			//$debug=1;
 			if($debug) up_info("Adding song: $songID to set $sID (in repertoir:$rID");
 			ubd_rp_add_repertoir_song($debug, $bandID, $rID, $sID, $songID, $comment);
@@ -1671,7 +1671,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action == "delete_song_from_set")
 	{
 			$name = ubd_rp_get_repertoir_name($debug, $bandID, $rID);
-			ubdc_print_page_title("Låtlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 			if ($debug) up_note("removing song: calling ubd_rp_remove_repertoir_song($debug, $rID, $sID, $iThSong);");
 			ubd_rp_remove_repertoir_song($debug, $bandID, $rID, $sID, $iThSong);
 			if ($debug) up_note("removing song: calling ubd_rp_remove_repertoir_song($debug, $rID, $sID, $iThSong);...DONE!");
@@ -1681,7 +1681,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action == "add_manuscript")
 	{	
 			$name = ubd_rp_get_repertoir_name($debug, $bandID, $rID);
-			ubdc_print_page_title("Låtlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 			// $debug=1;
 			if($debug) up_info("Adding manuscript: $songID to set $sID (in repertoir:$rID");
 			// ubd_rp_add_manuscript($debug, $bandID, $iSet, $iThSong, $rID)
@@ -1699,7 +1699,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action == "delete_manuscript")
 	{	
 			$name = ubd_rp_get_repertoir_name($debug, $bandID, $rID);
-			ubdc_print_page_title("Låtlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", $name, "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 			//$debug=1;
 			if($debug) up_info("Deleting manuscript: $songID to set $sID (in repertoir:$rID");
 			// ubd_rp_add_manuscript($debug, $bandID, $iSet, $iThSong, $rID)
@@ -1709,8 +1709,8 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "print_copy_repertoir_form")
 	{	
-		//ubdc_print_page_title("Kopiera låtlista", "", "", "", $bandID);
-		ucssr_print_header_title("Kopiera låtlista");
+		//ubdc_print_page_title("Kopiera lï¿½tlista", "", "", "", $bandID);
+		ucssr_print_header_title("Kopiera lï¿½tlista");
 		ucss_section_start($debug, "section3", $class);	
 		ubd_rp_print_copy_form($debug, $bandID, $rID, $targetPHP);
 		ucss_section_end($debug, "section3", $class);	
@@ -1720,7 +1720,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		$rp_name = ubd_rp_get_repertoir_name($debug, $bandID, $rID);
 		ubdc_print_page_title("$rp_name", "", "", "", $bandID);
 	
-// BEFORE		ubdc_print_page_title("Kopierad låtlista - $repertoir_name", "", "", "", $bandID);
+// BEFORE		ubdc_print_page_title("Kopierad lï¿½tlista - $repertoir_name", "", "", "", $bandID);
 		$newRID = ubd_rp_copy_repertoir($debug, $bandID, $rID, $targetPHP, $repertoir_name);
 //		ubd_rp_print_nice_repertoir($debug, $bandID, $NewrID, $layout, $chordLayout, $userID, $HideIcons, $bandMgmtPHP, $lyricsPHP);
 	    ubd_rp_view($debug, $bandID, $newRID, $PHP_FILE_NAME, $LYRICS_PHP, $layout);	  // VIEW SPECIFIC  
@@ -1728,7 +1728,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action == "place_song_in_repertoir")
 	{	
 			$name = ubd_rp_get_repertoir_name($debug, $bandID, $rID);
-			ubdc_print_page_title("Låtlistor", $name, "", "", $bandID);  // $PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID
+			ubdc_print_page_title("Lï¿½tlistor", $name, "", "", $bandID);  // $PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID
 		//	$debug=1;
 			if ($debug) echo "<li> EDIT REPERTOIR - EDIT PLACE FOR";
 			ubd_rp_update_repertoir_song($debug, $bandID, $rID, $sID, $iThSong, $songID, $subaction, $newPosition);
@@ -1744,7 +1744,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	else if ($action == "update_repertoir")
 	{
 		// $debug = 1;
-		ubdc_print_page_title("Låtlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+		ubdc_print_page_title("Lï¿½tlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 	    ubd_rp_update( $debug, $bandID, $repertoirID, $name );	
 	//	ubd_rp_update_last_update($debug, $repertoirID);
 	    ubd_rp_view($debug,  $bandID, "", $PHP_FILE_NAME, $LYRICS_PHP);	  // VIEW ALL  
@@ -1752,7 +1752,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "delete_repertoir")  // SAFE QUESTION
 	{
-		ucssr_print_header_title("Ta bort låtlista");
+		ucssr_print_header_title("Ta bort lï¿½tlista");
 		ucss_section_start($debug, "section3", $class);	
 	    ubd_rp_print_delete_question($debug, $bandID, $rID, $PHP_FILE_NAME);	
 		ucss_section_end($debug, "section3", $class);	
@@ -1763,7 +1763,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 			if ($debug) echo "<li> DELETE REPERTOIR - debug=$debug";
 	    	ubd_rp_delete($debug, $bandID, $rID);	
 			if ($debug) echo "<li> DELETE REPERTOIR - DONE!";
-			ubdc_print_page_title("Låtlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
+			ubdc_print_page_title("Lï¿½tlistor", "", "$PHP_FILE_NAME?action=print_add_repertoir_form&bandID=$bandID", "", $bandID);
 	    	ubd_rp_view($debug,  $bandID, "", $PHP_FILE_NAME, $LYRICS_PHP);	  // VIEW ALL  
 	}	
 	// ========================================
@@ -1778,18 +1778,18 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		ucss_section_start($debug, "section3", $class);	
 	 	ubd_rh_view($debug, $bandID,  $rehersalID, $PHP_FILE_NAME, $LYRICS_PHP, $PREVIOUS_ACTION);	
 		ucss_section_end($debug, "section3", $class);	
-		ucssr_print_header_title("TILLGÄNGLIGHETSSCHEMA");
+		ucssr_print_header_title("TILLGï¿½NGLIGHETSSCHEMA");
 		ucss_section_start($debug, "section3", $class);	
 		ubd_rh_print_availability_matrix($debug, $targetPHP, $bandID, $userID, 30, $goto);
 		ucss_section_end($debug);
-//	 	ub_nice_link("$targetPHP?action=print_rehersal_availability&bandID=$bandID", "Tillgänglighetsschema", $target, "Fyll i när du kan repa!", $tableColumn, $onMouseOver, $onMouseOut, $fontSize, $bold, $italic, $valign, $columnWidth, $colspan, $openColumn, $bgcolor, $fontColor);
+//	 	ub_nice_link("$targetPHP?action=print_rehersal_availability&bandID=$bandID", "Tillgï¿½nglighetsschema", $target, "Fyll i nï¿½r du kan repa!", $tableColumn, $onMouseOver, $onMouseOut, $fontSize, $bold, $italic, $valign, $columnWidth, $colspan, $openColumn, $bgcolor, $fontColor);
     
 		if ($debug) up_note ("VIEW REHERSALS...Done");
 	}
 	else if ($action == "print_add_rehersal_form")
 	{
 	// $pageTitle, $subTitle, $addURL, $addHoverText, $bandID)
-//			ubdc_print_page_title("Rep", "Lägg till rep", $addURL, $addHoverText, $bandID);
+//			ubdc_print_page_title("Rep", "Lï¿½gg till rep", $addURL, $addHoverText, $bandID);
 		//$debug = 1;
 		if ($debug) up_note ("Add REHERSAL");
 //function ubd_rh_print_form($debug, $bandID, $edit, $rehersalID)
@@ -1856,14 +1856,14 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 			ubdc_update_menu_frame();
 	}	
 	// ======================================
-	// TILLGÄNGLIGHET / AVAILABILITY
+	// TILLGï¿½NGLIGHET / AVAILABILITY
 	else if ($action == "print_rehersal_availability")
 	{
-		// ubdc_print_page_title("Tillgänglighetsschema", "", "", "Lägg till", $bandID);
+		// ubdc_print_page_title("Tillgï¿½nglighetsschema", "", "", "Lï¿½gg till", $bandID);
 		$debug = 0;
 		if ($debug) up_note ("VIEW REHERSALS");
 	 	// ubd_rh_view($debug, $bandID,  $rehersalID, $PHP_FILE_NAME, $LYRICS_PHP);	
-	    ucssr_print_header_title("TILLGÄNGLIGHETSSCHEMA");
+	    ucssr_print_header_title("TILLGï¿½NGLIGHETSSCHEMA");
 		ucss_section_start($debug, "section3", $class);	
 		ubd_rh_print_availability_matrix($debug, $targetPHP, $bandID, $userID, $nofDays, $goto);
 		ucss_section_end($debug);
@@ -1872,7 +1872,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "edit_rehersal_availability")
 	{
-		// ubdc_print_page_title("Tillgänglighetsschema", "", "", "Lägg till", $bandID);
+		// ubdc_print_page_title("Tillgï¿½nglighetsschema", "", "", "Lï¿½gg till", $bandID);
 		$debug = 0;
 		if ($debug) up_note ("EDIT AVAILABILITY");
 	 	// ubd_rh_view($debug, $bandID,  $rehersalID, $PHP_FILE_NAME, $LYRICS_PHP);	
@@ -1884,7 +1884,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "add_availability")
 	{
-		// ubdc_print_page_title("Tillgänglighetsschema", "", "", "Lägg till", $bandID);
+		// ubdc_print_page_title("Tillgï¿½nglighetsschema", "", "", "Lï¿½gg till", $bandID);
 		$debug = 0;
 		if ($debug) up_note ("ADD AVAILABILITY");
 	 	// ubd_rh_view($debug, $bandID,  $rehersalID, $PHP_FILE_NAME, $LYRICS_PHP);	
@@ -1904,17 +1904,17 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	// ======================================== The functions reside in util_band_gig.php ===
 	else if ($action == "print_add_gig_form")
 	{
-		ubdc_print_page_title("Lägg till spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Lï¿½gg till spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 	    ubd_gi_print_form($debug, $bandID, 0, "", $date, $time, $notes, $arenaID, $PHP_FILE_NAME, "ADD");
 	}
 	else if ($action == "prepare_add_arena")
 	{
-		ubdc_print_page_title("Lägg till spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Lï¿½gg till spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 	    ubd_gi_print_form($debug, $bandID, 0, "", $date, $time, $notes, $arenaID, $PHP_FILE_NAME, "PREPARE_ADD");
 	}
 	else if ($action == "add_arena")
 	{
-		ubdc_print_page_title("Lägg till arena", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Lï¿½gg till arena", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		// $debug = 1;
 		$arenaID = ubdc_add_arena($debug, $name, $streetAddress, $city, $URL);
 		if ($gigID > 0) 
@@ -1934,20 +1934,20 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 /* NOT USED */
 	else if ($action == "edit_arena")
 	{
-		ubdc_print_page_title("Redigera arena", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Redigera arena", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		// $debug = 1;
 		ubdc_print_new_arena_item_form($targetPHP, $errorFlag, $arenaID, $bandID, $gigID);
 	}
 	else if ($action == "update_arena")
 	{
-		ubdc_print_page_title("Uppdatera arena", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Uppdatera arena", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		// $debug = 1;
 		//ubdc_print_new_arena_item_form($targetPHP, $errorFlag, $selectedArena, $bandID, $gigID);
 	}
 	// GIG
 	else if ($action == "add_gig")
 	{	
-//		ubdc_print_page_title("Lägger till spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+//		ubdc_print_page_title("Lï¿½gger till spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		// $debug = 1;
 	    if (ubd_gi_add($debug, $bandID, $date, $time, $eventType, $arenaID, $PHP_FILE_NAME, $repertoirID ) <=0)
 	    {
@@ -1964,7 +1964,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "view_gigs")
 	{
-//		ubdc_print_page_title("Spelningar", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+//		ubdc_print_page_title("Spelningar", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		// $debug = 1;
 		ucssr_print_header_title("SPELNINGAR");
 		ucss_section_start($debug, "section3", $class);
@@ -1976,8 +1976,8 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		if ($gigID > 0)
 		{
 			ubd_gi_get_data($debug, $bandID,  $gigID, &$date, &$time, &$eventType, &$arenaID, &$repertoirID);
-//			ubdc_print_page_title($eventType, "", "", "Lägg till spelning...", $bandID);			
-			// ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+//			ubdc_print_page_title($eventType, "", "", "Lï¿½gg till spelning...", $bandID);			
+			// ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 			ucssr_print_header_title("SPELNING - $eventType");
 			ucss_section_start($debug, "section3", $class);
 	    	ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, $date);	   
@@ -1987,8 +1987,8 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	    {
 	    	$gigID = ubd_gi_get_gig_id($debug, $bandID, $date);
 			ubd_gi_get_data($debug, $bandID,  $gigID, &$date, &$time, &$eventType, &$arenaID, &$repertoirID);
-//			ubdc_print_page_title($eventType, "", "", "Lägg till spelning...", $bandID);			
-//			ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+//			ubdc_print_page_title($eventType, "", "", "Lï¿½gg till spelning...", $bandID);			
+//			ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 // NOT INVALID - up_error("gigID invalid NULL value.");
 	   		// ubd_gi_view($debug, $bandID,  "", $PHP_FILE_NAME, $date);	    			    
 	    	ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, $stateFlag, $travelID, $date);	   
@@ -2003,7 +2003,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		if ($eventType != "")
 			ubdc_print_page_title($eventType, "", "", "", $bandID);	
 		else		
-			ubdc_print_page_title("Lägg till spelning", "", "", "", $bandID);
+			ubdc_print_page_title("Lï¿½gg till spelning", "", "", "", $bandID);
 */
 		//$debug = 1;
 	    ubd_gi_print_form($debug, $bandID, 1, $gigID, $date, $time, $notes, $arenaID, $PHP_FILE_NAME, "EDIT");
@@ -2013,7 +2013,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		ubd_gi_get_data($debug, $bandID,  $gigID, &$$old_date, &$$old_time, &$old_eventType, &$old_arenaID, &$old_repertoirID);
 		if ($eventType == "")
 			$eventType = $old_eventType;
-//		ubdc_print_page_title($eventType, "", "", "Lägg till spelning...", $bandID);			
+//		ubdc_print_page_title($eventType, "", "", "Lï¿½gg till spelning...", $bandID);			
 	    if (ubd_gi_update( $debug, $bandID, $gigID, $date, $time, $eventType, $arenaID, $repertoirID, $PHP_FILE_NAME ) < 0)
 	    {
 	    	ubd_gi_print_form($debug, $bandID, 0, "", $date, $time, $notes, $arenaID, $PHP_FILE_NAME, "INVALID_PARAMETERS");
@@ -2026,7 +2026,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "delete_gig")
 	{
-//		ubdc_print_page_title("Spelningar", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+//		ubdc_print_page_title("Spelningar", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		// $debug = 1;
 	    	ubd_gi_delete($debug, $bandID, $gigID);	
 		$debug = 0;
@@ -2043,7 +2043,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "update_gig_details")
 	{
-		//ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		//ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 			ubd_gi_get_data($debug, $bandID,  $gigID, &$date, &$time, &$eventType, &$arenaID, &$repertoirID);
 //			ubdc_print_page_title($eventType, "", "", "", $bandID);			
 	//	$debug = 1;
@@ -2057,7 +2057,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 		ubd_gi_get_data($debug, $bandID,  $gigID, &$date, &$time, &$eventType, &$arenaID, &$repertoirID);
 		ucssr_print_header_title("Redigera spelning");
 //			ubdc_print_page_title($eventType, "", "", "", $bandID);			
-//		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+//		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		//$debug = 1;
 		ucss_section_start($debug, "section3", $class);
 	    ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, "EDIT_ARENA_DETAILS", $travelID, $date);	   
@@ -2097,7 +2097,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	// ======================================== ACCOMODATION
 	else if ($action == "print_add_hotel_form")
 	{
-		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 	    ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, "ADD_ACCOMODATION");	   
 		ubdc_update_menu_frame();
 	}
@@ -2116,7 +2116,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "edit_hotel")
 	{
- 		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+ 		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 	   	ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, "EDIT_HOTEL");	   
 	}
 	else if ($action == "update_hotel")
@@ -2132,24 +2132,24 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	// ======================================== TRAVEL/TRANSPORTATION
 	else if ($action == "print_add_travel_form")
 	{
-		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 	    ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, "ADD_TRAVEL");	   
 		ubdc_update_menu_frame();
 	}
 	else if ($action == "add_travel")
 	{
-		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		ubd_gi_add_travel($debug, $gigID, $typeOfTransportation, $from, $destination, $date, $departureTime, $arrivalTime, $bookingReference, $userID, $travelDocument);
 	    ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, "");	   
 	}
 	else if ($action == "edit_travel")
 	{
-		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 	    ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, "EDIT_TRAVEL", $travelID);	   
 	}
 	else if ($action == "update_travel")
 	{
-		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lägg till spelning...", $bandID);
+		ubdc_print_page_title("Spelning", "", "$PHP_FILE_NAME?action=print_add_gig_form&bandID=$bandID", "Lï¿½gg till spelning...", $bandID);
 		ubd_gi_update_travel($debug, $gigID, $travelID, $typeOfTransportation, $departureFrom, $destination, $date, $departureTime, $arrivalTime, $bookingReference, $userID, $travelDocument);
 	    ubd_gi_view_gig($debug, $bandID, $gigID, $PHP_FILE_NAME, "", $travelID);	   
 	}
@@ -2158,12 +2158,12 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	// ======================================== The functions reside in util_band_member.php ===
 	else if ($action == "print_add_bandmember_form")
 	{
-		ubdc_print_page_title("Lägg till bandmedlem", "", "", "", $bandID);
+		ubdc_print_page_title("Lï¿½gg till bandmedlem", "", "", "", $bandID);
 	    ubd_bm_print_form($debug, $bandID, $edit, $bandMemberID, $targetPHP);
 	}
 	else if ($action == "add_bandmember")
 	{	
-	//	ubdc_print_page_title("Lägg till bandmedlem", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lägg till bandmedlem...", $bandID);
+	//	ubdc_print_page_title("Lï¿½gg till bandmedlem", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lï¿½gg till bandmedlem...", $bandID);
 	//	$debug = 1;
 	    $newBandMemberID = ubd_bm_add($debug, $bandID, $bandMemberID, $firstName, $lastName, $streetAddress, $postalCode, $city, $phoneWork, $phoneHome, $phoneCellular, $emailWork, $emailPrivate, $instrumentCBoxes ); 
 	//	ubd_bm_view($debug,  $newBandMemberID);	  
@@ -2173,12 +2173,12 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	{
 		// NOT USED
 		// This is used ubdc_print_start_page($debug, $bandID, $bandMemberID, $PHP_FILE_NAME, $stateFlag, $MY_PHP_PARAM_LIST);
-		// ubdc_print_page_title("Bandmedlem", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lägg till bandmedlem...", $bandID);
+		// ubdc_print_page_title("Bandmedlem", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lï¿½gg till bandmedlem...", $bandID);
 		// ubd_bm_view($debug,  $bandMemberID);	    
 	}
 	else if ($action == "edit_bandmember")
 	{
-		ubdc_print_page_title("Redigera Bandmedlem", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lägg till bandmedlem...", $bandID);
+		ubdc_print_page_title("Redigera Bandmedlem", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lï¿½gg till bandmedlem...", $bandID);
 		//ubd_bm_view($debug,  $bandMemberID);	
 		ubdc_print_start_page($debug, $bandID, $userID, $PHP_FILE_NAME, "EDIT", $PREVIOUS_ACTION);    
 	}
@@ -2195,7 +2195,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	{
 		$firstName = ubdc_get_firstname($bandMemberID);
 		$lastName = ubdc_get_lastname($bandMemberID);
-		ubdc_print_page_title("Ta bort bandmedlem '$firstName $lastName'", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lägg till bandmedlem...", $bandID);
+		ubdc_print_page_title("Ta bort bandmedlem '$firstName $lastName'", "", "$PHP_FILE_NAME?action=print_add_bandmember_form&bandID=$bandID", "Lï¿½gg till bandmedlem...", $bandID);
 		$DeleteText = "Do you really want to delete band member '$firstName $lastName'?";
 		$ConfirmAction = "do_delete_bandmember&bandMemberID=$bandMemberID";
 		$CancelAction = "view_start_page&bandMemberID=$bandMemberID";
@@ -2212,7 +2212,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	// ======================================== The functions reside in util_band_member.php ===
 	else if ($action == "print_add_band_video_form")
 	{
-		//ubdc_print_page_title("Lägg till video", "", "$PHP_FILE_NAME?action=view_band_videos&bandID=$bandID", "Avbryt", $bandID, "CANCEL");
+		//ubdc_print_page_title("Lï¿½gg till video", "", "$PHP_FILE_NAME?action=view_band_videos&bandID=$bandID", "Avbryt", $bandID, "CANCEL");
 		ucss_section_start($debug, "section3", $class);
 	    ubd_vi_print_form($debug, $PHP_FILE_NAME, $bandID, $edit, $bandMemberID, $targetPHP);
 		ucss_section_end($debug);
@@ -2220,14 +2220,14 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "add_band_video")
 	{	
-		ubdc_print_page_title("Lägg till video", "", "$PHP_FILE_NAME?action=print_add_video_form&bandID=$bandID", "Lägg till video...", $bandID);
+		ubdc_print_page_title("Lï¿½gg till video", "", "$PHP_FILE_NAME?action=print_add_video_form&bandID=$bandID", "Lï¿½gg till video...", $bandID);
 		ubd_vi_add($debug, $bandID, $gigID, $title, $URL  );
 		ubdc_update_menu_frame();
  		ubd_vi_view_all($debug, $bandID, $targetPHP);
 	}
 	else if ($action == "view_band_video")
 	{
-	//	ubdc_print_page_title("View Video", "", "$PHP_FILE_NAME?action=print_add_band_video_form&bandID=$bandID", "Lägg till video...", $bandID);
+	//	ubdc_print_page_title("View Video", "", "$PHP_FILE_NAME?action=print_add_band_video_form&bandID=$bandID", "Lï¿½gg till video...", $bandID);
 	//	$debug = 1;
 	//	ubd_vi_view_all($debug, $bandID, $targetPHP);
 		ucss_section_start($debug, "section3", $class);
@@ -2236,7 +2236,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	}
 	else if ($action == "view_band_videos")
 	{
-	//	ubdc_print_page_title("Videos", "", "$PHP_FILE_NAME?action=print_add_band_video_form&bandID=$bandID", "Lägg till video...", $bandID);
+	//	ubdc_print_page_title("Videos", "", "$PHP_FILE_NAME?action=print_add_band_video_form&bandID=$bandID", "Lï¿½gg till video...", $bandID);
 	//	$debug = 1;
 		ucssr_print_header_title("VIDEOS");
 		ucss_section_start($debug, "section3", $class);
@@ -2268,7 +2268,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	// =====================================================
 	else
 	{
-		ubdc_print_page_title("Okänt val", "", "", "", $bandID);
+		ubdc_print_page_title("Okï¿½nt val", "", "", "", $bandID);
 		up_error("index.php : unknown action: '$action'");
 		echo "<hr>\n";
 		uly_print_lyrics_table($debug, $dbase, $tableName, $targetPHP, $titleFilter, $artistFilter, $selectedInstrument, $bandID);
@@ -2279,7 +2279,7 @@ $DEVICE = ul_get_device($_SERVER['HTTP_USER_AGENT']);
 	ucss_section_end($debug);
 ?>
 <!-- ==================================================================== PHP PHP PHP PHP-->
- 
+ </font>
 </body>
 
 
